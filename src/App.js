@@ -9,18 +9,9 @@ import Header from './components/Header';
 function App() {
 
   const [currency, setCurrency] = useState('USD');
-  const [items, setItems] = useState([])
- 
-
   const handleCurrency=(selected)=>{
     console.log(selected)
     setCurrency(selected)
-    }
-    const handleAdd=(book)=>{
-     if(!items.some((item)=>item.id===book.id)){
-       let newItems=[...items, book]
-       setItems(newItems)
-     }
     }
   return (
     <div className="App">
