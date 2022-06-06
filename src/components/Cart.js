@@ -1,13 +1,13 @@
-import React from 'react';
-import {useCart} from '../context/CartContext'
+import React from "react";
+import { useCart } from "../context/CartContext";
 
 function Cart() {
-const {items} =useCart()
+  const { items } = useCart();
   return (
-    <div className='cart'>
-        {items.length} {items.length===1 ? 'item' : 'items'}
+    <div className="cart">
+      {items.length} {items.length === 1 ? "item" : "items"}
     </div>
-  )
+  );
 }
 
-export default Cart
+export default Cart;
