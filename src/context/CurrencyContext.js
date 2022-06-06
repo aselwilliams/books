@@ -16,4 +16,4 @@ export const CurrencyProvider=({children})=>{
         </CurrencyContext.Provider>
     )
 }
-export const useCurrency=()=>useContext(CartContext)
+export const useCurrency=()=>useContext(CurrencyContext)

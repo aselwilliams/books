@@ -1,8 +1,10 @@
 import React from 'react';
 import {useCart} from '../context/CartContext'
+import { useCurrency } from '../context/CurrencyContext';
 
-function Book({book, currency}) {
-    const {items, handleDelete, handleDelete} = useCart();
+function Book({book}) {
+    const {items, handleAdd, handleDelete} = useCart();
+    const {currency} =useCurrency()
 
     const isAdded=items.some((item)=>item.id===book.id)
   return (

@@ -5,16 +5,20 @@ import PriceSelector from './components/PriceSelector';
 import Cart from './components/Cart'
 import Books from './components/Books'
 import Header from './components/Header';
+import { CartProvider } from './context/CartContext';
+import { CurrencyProvider } from './context/CurrencyContext';
 
 function App() {
 
   return (
-    <div className="App">
+    <CartProvider>
+      <CurrencyProvider>
       <Header />
       <PriceSelector />
-      <Cart items={items} />
-    <Books data={data} currency={currency} />
-    </div>
+      <Cart/>
+    <Books data={data}/>
+    </CurrencyProvider>
+    </CartProvider>
   );
 }
 
