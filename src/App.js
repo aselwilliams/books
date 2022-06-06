@@ -1,23 +1,33 @@
-import logo from './logo.svg';
+import {useState} from 'react'
 import './App.css';
+import data from './data';
+import PriceSelector from './components/PriceSelector';
+import Cart from './components/Cart'
+import Books from './components/Books'
+import Header from './components/Header';
 
 function App() {
+
+  const [currency, setCurrency] = useState('USD');
+  const [items, setItems] = useState([])
+ 
+
+  const handleCurrency=(selected)=>{
+    console.log(selected)
+    setCurrency(selected)
+    }
+    const handleAdd=(book)=>{
+     if(!items.some((item)=>item.id===book.id)){
+       let newItems=[...items, book]
+       setItems(newItems)
+     }
+    }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <PriceSelector handleCurrency={handleCurrency} />
+      <Cart items={items} />
+    <Books data={data} handleAdd={handleAdd} items={items} currency={currency} />
     </div>
   );
 }
