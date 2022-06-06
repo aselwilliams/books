@@ -8,17 +8,12 @@ import Header from './components/Header';
 
 function App() {
 
-  const [currency, setCurrency] = useState('USD');
-  const handleCurrency=(selected)=>{
-    console.log(selected)
-    setCurrency(selected)
-    }
   return (
     <div className="App">
       <Header />
-      <PriceSelector handleCurrency={handleCurrency} />
+      <PriceSelector />
       <Cart items={items} />
-    <Books data={data} handleAdd={handleAdd} items={items} currency={currency} />
+    <Books data={data} currency={currency} />
     </div>
   );
 }

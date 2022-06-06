@@ -1,6 +1,8 @@
-import React from 'react'
+import React from 'react';
+import {useCurrency} from '../context/CurrencyContext'
 
-function PriceSelector({handleCurrency}) {
+function PriceSelector() {
+    const {handleCurrency} =useCurrency()
   return (
     <div className='icon-wrapper'>
        <img className='icon' src= "https://m.media-amazon.com/images/I/51XSXMvcp0L._AC_SX679_.jpg" onClick={()=>handleCurrency('USD')} alt='currency'/>
